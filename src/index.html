@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decentralized Retail Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Decentralized Retail Store</h1>
+            <div id="wallet-info">
+                <div id="login-section">
+                    <button id="connect-wallet">Connect Wallet</button>
+                </div>
+                <div id="account-section" class="hidden">
+                    <p>Connected Account: <span id="account-address"></span></p>
+                    <p>Balance: <span id="account-balance"></span> ETH</p>
+                </div>
+            </div>
+        </header>
+        <main>
+            <section id="contract-status" class="alert hidden">
+                <p>Smart Contract Status: <span id="contract-status-message">Not Connected</span></p>
+            </section>
+            <section id="add-product" class="hidden">
+                <h2>Add New Product</h2>
+                <form id="product-form">
+                    <div class="form-group">
+                        <label for="product-name">Product Name</label>
+                        <input type="text" id="product-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-price">Price (ETH)</label>
+                        <input type="number" id="product-price" step="0.001" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-description">Description</label>
+                        <textarea id="product-description" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-image">Image URL</label>
+                        <input type="url" id="product-image" required>
+                    </div>
+                    <button type="submit">Add Product</button>
+                </form>
+            </section>
+            <section id="products">
+                <h2>Available Products</h2>
+                <div id="product-list" class="product-grid">
+                    <!-- Products will be added dynamically here -->
+                    <div id="no-products-message">Loading products...</div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p>© 2025 Decentralized Retail Store - Web3 DApp </p>
+        </footer>
+    </div>
+    <div id="purchase-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Purchase Product</h2>
+            <div id="modal-product-details">
+                <h3 id="modal-product-name"></h3>
+                <p>Price: <span id="modal-product-price"></span> ETH</p>
+                <p id="modal-product-description"></p>
+                <img id="modal-product-image" src="" alt="Product Image">
+            </div>
+            <button id="confirm-purchase">Confirm Purchase</button>
+            <div id="purchase-status" class="hidden"></div>
+        </div>
+    </div>
+    <div id="loading-overlay" class="hidden">
+        <div class="loader"></div>
+        <p id="loading-message">Processing transaction...</p>
+    </div>
+    <script src="bundle.js"></script>
+</body>
+</html>
