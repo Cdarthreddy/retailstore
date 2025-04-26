@@ -5,7 +5,7 @@ import Web3 from 'web3';
 let web3;
 let contract;
 let userAccount;
-let contractAddress = "0xda721EC34626d0d8Ae4cFd90dDd3eF6C24a1AE44"; // You'll need to fill this in after deploying the contract
+let contractAddress = "0x0ECaa281dFBF2BaCae79508fdA7D8C249B8A6F10"; // You'll need to fill this in after deploying the contract
 let currentProductId;
 // ABI for the RetailStore contract - this will be generated when you compile your contract in Remix
 const contractABI = [
